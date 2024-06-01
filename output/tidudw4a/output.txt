@@ -1,0 +1,19 @@
+根据图片中的模块信息，列出所有的连接关系如下：
+
+1. **Thin-Film 3V Cell (Energy Storage)** 
+   - 连接到 **CC2640 (Digital Processing... Memory)**
+   - 连接到 **TMP117 (Temperature AFE Memory)**
+
+2. **TMP117 (Temperature AFE Memory)**
+   - 通过 **I2C** 连接到 **CC2640 (Digital Processing... Memory)**
+
+3. **CC2640 (Digital Processing... Memory)**
+   - 通过 **I2C** 连接到 **TMP117 (Temperature AFE Memory)**
+   - 通过 **GPIO** 连接到 **Wake-Up Switch (Input User Interface)**
+   - 连接到 **Wireless Interface**
+   - 连接到 **IOS & Android GUI (Output UI)**
+
+4. **Wake-Up Switch (Input User Interface)**
+   - 通过 **GPIO** 连接到 **CC2640 (Digital Processing... Memory)**
+
+这就是图中显示的所有模块及其连接关系。

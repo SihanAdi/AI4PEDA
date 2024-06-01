@@ -1,0 +1,25 @@
+根据图中信息，Wi-Fi 门锁软件模块的连接关系如下（自上而下）：
+
+1. **Wi-Fi Door-Lock Application**
+   - 连接到：`Sensor and Actuator Plugin` 以及 `BLE Plugin`
+   
+2. **Sensor and Actuator Plugin**
+   - 连接到：`TI SimpleLink MCU SDK`
+
+3. **BLE Plugin**
+   - 连接到：`TI SimpleLink MCU SDK`
+
+4. **TI SimpleLink MCU SDK**
+   - 由以下部分组成：
+     - **CC3220 Middleware (SimpleLink Wi-Fi Host Driver)**
+     - **TI Drivers**
+     - **TI-RTOS**
+     - **Hardware Abstraction Layer**
+
+5. **TI SimpleLink MCU SDK**
+   - 连接到：`CC3220S` 硬件
+
+因此，整个模块间的连接关系是：
+- `Wi-Fi Door-Lock Application` 与 `Sensor and Actuator Plugin`及`BLE Plugin` 直接连接。
+- `Sensor and Actuator Plugin` 和 `BLE Plugin` 都与 `TI SimpleLink MCU SDK` 连接。
+- `TI SimpleLink MCU SDK` 的内部组成部分：`CC3220 Middleware`，`TI Drivers`，`TI-RTOS` 和 `Hardware Abstraction Layer`，它们共同作用并连接到 `CC3220S` 硬件。

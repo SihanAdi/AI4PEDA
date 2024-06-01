@@ -1,0 +1,32 @@
+当然，以下是图中的所有模块和它们之间的连接关系：
+
+1. **CC 3200**
+   - 内部分为两个模块：
+     - **Wi-Fi NWP**
+     - **ARM Cortex M4**
+   - 连接到**2.4GHz ANT**（天线）
+   - 通过**TRF Control**连接到**TRF7970A**
+   - 通过**SPI**连接到**TRF7970A**
+   - 通过连接到**Serial Flash**
+   - 通过连接到**Switch (Factory Reset)**
+   - 通过连接到**Switch (Reset)**
+
+2. **TRF7970A**
+   - 通过**TRF Control**连接到**CC 3200**
+   - 通过**SPI**连接到**CC 3200**
+   - 通过连接到**Matching**
+
+3. **Matching**
+   - 通过连接到**TRF7970A**
+   - 连接到**2.4GHz ANT**（天线）
+
+4. **Serial Flash**
+   - 通过连接到**CC 3200**
+
+5. **Switch (Factory Reset)**
+   - 通过连接到**CC 3200**
+
+6. **Switch (Reset)**
+   - 通过连接到**CC 3200**
+
+这些是图中所有模块的连接关系。
